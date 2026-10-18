@@ -5,6 +5,8 @@
 :root {
   color-scheme: dark;
   font-family: "Segoe UI", sans-serif;
+  min-height: 100%;
+  background-color: #08090d;
 }
 
 body {
@@ -12,25 +14,25 @@ body {
   isolation: isolate;
   overflow: hidden;
   min-height: 100vh;
+  min-height: 100svh;
   margin: 0;
   display: grid;
   place-items: center;
   padding: 2rem;
-  background:
-    radial-gradient(ellipse at 50% 48%, rgb(24 20 41 / 75%), transparent 58%),
-    #08090d;
+  background-color: #08090d;
+  background-image: radial-gradient(ellipse at 50% 48%, rgb(24 20 41 / 75%), transparent 58%);
   color: #fff;
 }
 
 body::before,
 body::after {
-  position: absolute;
-  z-index: -1;
-  width: min(42vw, 34rem);
+  position: fixed;
+  z-index: 0;
+  width: min(70vw, 34rem);
   aspect-ratio: 1;
   border-radius: 50%;
   content: "";
-  filter: blur(100px);
+  filter: blur(80px);
   opacity: 0.48;
   pointer-events: none;
 }
@@ -45,6 +47,12 @@ body::after {
   right: -12%;
   bottom: -30%;
   background: #ff397d;
+}
+
+body > main {
+  position: relative;
+  z-index: 1;
+  width: 100%;
 }
 
 h1 {

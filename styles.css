@@ -96,6 +96,115 @@ h1 span:hover {
   text-shadow: 0 12px 30px rgb(190 119 255 / 55%);
 }
 
+.game {
+  display: grid;
+  justify-items: center;
+  gap: 0.8rem;
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.game-header {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  width: min(100%, 360px);
+  text-align: left;
+}
+
+.eyebrow,
+.game-controls,
+.game-status,
+.score span {
+  margin: 0;
+  color: #c5bed8;
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+}
+
+.eyebrow {
+  margin-bottom: 0.15rem;
+  color: #ff9ac1;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.game h1 {
+  font-size: clamp(1.7rem, 7vw, 2.25rem);
+  letter-spacing: -0.06em;
+  text-align: left;
+}
+
+.score {
+  display: grid;
+  justify-items: end;
+  gap: 0.1rem;
+  margin: 0;
+}
+
+.score strong {
+  color: #fff;
+  font-size: 1.7rem;
+  line-height: 1;
+}
+
+.game-stage {
+  position: relative;
+  width: min(100%, 360px);
+  overflow: hidden;
+  border: 1px solid rgb(203 186 255 / 30%);
+  border-radius: 1.25rem;
+  background: #10121c;
+  box-shadow: 0 1.5rem 5rem rgb(0 0 0 / 38%), 0 0 2.5rem rgb(116 59 255 / 18%);
+  aspect-ratio: 3 / 5;
+}
+
+.game-stage canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  touch-action: none;
+}
+
+.game-start {
+  position: absolute;
+  bottom: 17%;
+  left: 50%;
+  min-width: 9rem;
+  padding: 0.75rem 1.1rem;
+  transform: translateX(-50%);
+  border: 1px solid rgb(255 255 255 / 35%);
+  border-radius: 999px;
+  background: linear-gradient(100deg, #743bff, #d54bba);
+  box-shadow: 0 0.5rem 1.5rem rgb(116 59 255 / 40%);
+  color: #fff;
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.game-start[hidden] {
+  display: none;
+}
+
+.game-start:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 3px;
+}
+
+.game-status {
+  min-height: 1.2em;
+  color: #fff;
+}
+
+.game-controls {
+  color: #a9a3b9;
+  text-align: center;
+}
+
 @media (prefers-reduced-motion: reduce) {
   h1 span {
     transition: none;
@@ -103,5 +212,20 @@ h1 span:hover {
 
   h1 span:hover {
     transform: none;
+  }
+}
+
+@media (max-height: 720px) {
+  body {
+    padding: 0.75rem;
+  }
+
+  .game {
+    gap: 0.45rem;
+  }
+
+  .game-stage {
+    width: min(100%, calc((100vh - 190px) * 0.6), 360px);
+    width: min(100%, calc((100svh - 190px) * 0.6), 360px);
   }
 }

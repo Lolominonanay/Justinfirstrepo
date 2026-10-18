@@ -4,10 +4,28 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#08090d">
-    <title>Blank Page</title>
+    <title>Neon Flap</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="game.js" defer></script>
   </head>
   <body>
-    <main></main>
+    <main class="game">
+      <header class="game-header">
+        <div>
+          <p class="eyebrow">A tiny arcade game</p>
+          <h1>Neon Flap</h1>
+        </div>
+        <p class="score" aria-label="Score">
+          <span>Score</span>
+          <strong id="score">0</strong>
+        </p>
+      </header>
+      <div class="game-stage">
+        <canvas id="game" width="360" height="600" aria-label="Flappy-style game. Tap, click, or press Space or Arrow Up to flap and avoid the pipes." tabindex="0"></canvas>
+        <button class="game-start" id="start-button" type="button">Start game</button>
+      </div>
+      <p class="game-status" id="game-status" aria-live="polite">Tap, click, or press Space to flap</p>
+      <p class="game-controls">Tap or click to flap <span aria-hidden="true">·</span> Space or ↑ on PC</p>
+    </main>
   </body>
 </html>

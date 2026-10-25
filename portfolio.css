@@ -434,6 +434,11 @@ h3 {
   background: #f1f0e9;
 }
 
+.experience-list {
+  display: grid;
+  gap: 14px;
+}
+
 .section-heading {
   display: grid;
   grid-template-columns: 0.65fr 1.35fr;
